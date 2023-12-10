@@ -1,0 +1,44 @@
+﻿@model List<MusicStore.Models.SongView>
+
+    @{
+        ViewData["Title"] = "Songs";
+    }
+    <h3>@ViewData["Title"]</h3>
+    <hr />
+    <form>
+        <button asp-action="Filter" asp-controller="SongController" class="btn btn-primary">Filter</button>
+        <table class="table table-responsive table-hover">
+            <thread>
+            <tr class="table_active">
+                <th>Id</th>
+                <th>artist_id</th>
+                <th>song_name</th>
+                <th>cost</th>
+            </tr>
+            </thread>
+            <tbody>
+            @if(Model != null && Model.Any())
+            {
+                @foreach(var song in Model)
+                {
+                    <tr>
+                        <td>@song.song_Id</td>
+                        <td>@song.artist_id</td>
+                        <td>@song.song_name</td>
+                        <td>@song.cost</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colsspan="6">
+                        <div>
+                            No songs available at this moment.
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    </form>
