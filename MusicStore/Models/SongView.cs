@@ -1,10 +1,13 @@
-﻿namespace MusicStore.Models
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace MusicStore.Models
 {
     public class SongView
     {
-        public int song_Id { get; set; }
-        public int artist_id { get; set; }
-        public string song_name { get; set; }
-        public decimal cost { get; set; }
+        public List<Songs>? song { get; set; }
+        public SelectList? genre_list { get; set; }
+        public SelectList? artist_list { get; set; }
+        public string? genre_name { get; set; }
+        public string? artist_name { get; set; }
     }
 }
