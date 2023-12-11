@@ -7,19 +7,21 @@
 <h3>Browse Music</h3>
 
 <form asp-controller="Song" asp-action="Index" method="get">
+
     <p>
 
         <select asp-for="genre_name" asp-items="Model.genre_list">
             <option value="">Genres</option>
         </select>
 
+        <input type="Submit" value="Filter" class="btn btn-primary" />
+
         <select asp-for="artist_name" asp-items="Model.artist_list">
             <option value="">Performers</option>
         </select>
 
-        <div class="form-group">
-            <input type="Submit" value="Filter" class="btn btn-primary" />
-        </div> 
+        <input type="Submit" value="Filter" class="btn btn-primary" />
+
     </p>
 </form>
 
